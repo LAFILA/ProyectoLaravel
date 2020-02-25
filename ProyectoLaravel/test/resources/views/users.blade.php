@@ -1,20 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de usuarios - test</title>
-</head>
-<body>
+@extends('layout')
+
+@section('title', 'Usuarios')
+
+@section('content')
     <h1>{{ $title }}</h1>
-    <hr>
 
     <ul>
         @forelse ($users as $user)
-            <li>{{ $user->name }}, ({{ $user->email }})</li>
+            <li>
+                {{ $user->name }}, ({{ $user->email }})
+                <a href="{{ route('users.show', ['id' => $user->id]) }}">Ver detalles</a>
+            </li>
         @empty
             <li>No hay usuarios registrados.</li>
         @endforelse
     </ul>
-</body>
-</html>
+@endsection
+
+@section('sidebar')
+    @parent
+@endsection

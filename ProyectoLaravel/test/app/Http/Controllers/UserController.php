@@ -27,14 +27,18 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $user = User::find($id);
-
+        $user = User::findOrFail($id);
 
         return view('users.show',compact('user'));
     }
 
     public function create()
     {
-        return 'Crear nuevo usuario';
+        return view('users.create');
+    }
+
+    public function store()
+    {
+        return 'Procesando información...';
     }
 }
