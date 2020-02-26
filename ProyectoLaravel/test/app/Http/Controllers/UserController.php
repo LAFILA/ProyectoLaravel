@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -69,18 +70,25 @@ class UserController extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
-            'email' => ['required','email', Rule::unique('users')->ignore($user->id)],
+            'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
             'password' => '',
         ]);
 
-        if($data['password'] != null){
+        if ($data['password'] != null) {
             $data['password'] = bcrypt($data['password']);
-        }else{
+        } else {
             unset($data['password']);
         }
 
         $user->update($data);
-        
+
         return redirect()->route('users.show', ['user' => $user]);
+    }
+
+    function destroy(User $user)
+    {
+        $user->delete();
+        
+        return redirect()->route('users.index');
     }
 }
