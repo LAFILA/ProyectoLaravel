@@ -7,7 +7,9 @@
         <h1 class="pb-1">{{ $title }}</h1>
 
         <p>
+        @if (\Auth::user()->is_admin === true)
             <a href="{{ route('users.create') }}" class="btn btn-primary">Nuevo usuario</a>
+       @endif
         </p>
     </div>
 
@@ -32,8 +34,10 @@
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <a href="{{ route('users.show', $user) }}" class="btn btn-link"><span class="oi oi-eye"></span></a> 
+                    @if (\Auth::user()->is_admin === true)
                     <a href="{{ route('users.edit', $user) }}" class="btn btn-link"><span class="oi oi-pencil"></span></a>
                     <button type="submit" class="btn btn-link"><span class="oi oi-trash"></span></button>
+                    @endif
                 </form>
             </td>
             </tr>

@@ -26,6 +26,7 @@ Route::get('/saludo/{name}/{nickname?}','WelcomeUserController');
 
 Route::delete('/usuarios/{user}', 'UserController@destroy')->name('users.destroy');
 
+
 //Botines
 
 Route::get('/botines', 'BotinController@index')
@@ -64,3 +65,6 @@ Route::get('/teclados/{Teclado}/editar', 'TecladoController@edit')->name('Teclad
 Route::put('/teclados/{Teclado}', 'TecladoController@update');
 
 Route::delete('/teclados/{Teclado}', 'TecladoController@destroy')->name('Teclados.destroy');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
