@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', function (){
-    return 'Home';
+    return 'Debes de poner /login o /home para entrar';
 });
 
 //Usuarios 
