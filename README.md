@@ -34,3 +34,6 @@ Papelera -> Para eliminar el Usuario, Botin, Teclado
 ( También puedes moverte por el encabezado donde he colocado las 3 tablas ) 
 
 Para ir al perfil puedes pulsar en ( Volver al perfil ) y te dirigirá hacia el perfil , donde podrás volver a seleccionar tabla o desloguearte en la parte superior derecha.
+
+
+LA BASE DE DATOS SE LLAMA ( test )
