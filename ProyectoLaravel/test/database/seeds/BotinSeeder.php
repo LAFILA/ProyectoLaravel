@@ -23,6 +23,34 @@ class BotinSeeder extends Seeder
             'tipo' => 'Deportivas',
             'modalidad' => 'Escalada',
         ]);
+
+
+        Botin::create([
+            'name' => 'Habulani',
+            'marca' => 'Adidas',
+            'genero' => 'Femenino',
+            'tipo' => 'Plataforma',
+            'modalidad' => 'Zapatos',
+        ]);
+
+
+        Botin::create([
+            'name' => 'Kasd',
+            'marca' => 'Kelme',
+            'genero' => 'Masculino',
+            'tipo' => 'Botas',
+            'modalidad' => 'Escalada',
+        ]);
+
+
+
+        Botin::create([
+            'name' => 'Air for One',
+            'marca' => 'Nike',
+            'genero' => 'Unisex',
+            'tipo' => 'Zapatillas',
+            'modalidad' => 'Urbanas',
+        ]);
      
 
     }

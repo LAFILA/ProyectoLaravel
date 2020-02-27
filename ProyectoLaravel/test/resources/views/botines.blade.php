@@ -7,7 +7,7 @@
         <h1 class="pb-1">{{ $title }}</h1>
 
         <p>
-            <a href="{{ route('botines.create') }}" class="btn btn-primary">Nuevo Botin</a>
+            <a href="{{ route('botines.createb') }}" class="btn btn-primary">Nuevo botin</a>
         </p>
     </div>
 
@@ -36,8 +36,8 @@
                 <form action="{{ route('botines.destroy', $botin) }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <a href="{{ route('botines.show', $botin) }}" class="btn btn-link"><span class="oi oi-eye"></span></a> 
-                    <a href="{{ route('botines.edit', $botin) }}" class="btn btn-link"><span class="oi oi-pencil"></span></a>
+                    <a href="{{ route('botines.showb', $botin) }}" class="btn btn-link"><span class="oi oi-eye"></span></a> 
+                    <a href="{{ route('botines.editb', $botin) }}" class="btn btn-link"><span class="oi oi-pencil"></span></a>
                     <button type="submit" class="btn btn-link"><span class="oi oi-trash"></span></button>
                 </form>
             </td>

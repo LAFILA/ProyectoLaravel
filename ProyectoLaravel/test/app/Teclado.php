@@ -11,7 +11,9 @@ class Teclado extends Model
      *
      * @var array
      */
+    protected $table = 'teclados';
     protected $fillable = [
         'id_teclados', 'name', 'idioma','tamano','tipo','cherry',
     ];
+    
 }

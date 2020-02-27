@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProfessionSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(BotinSeeder::class);
+        $this->call(TecladoSeeder::class);
     }
 
     protected function truncateTables(array $tables)

@@ -12,8 +12,8 @@ Route::get('/usuarios', 'UserController@index')
 Route::get('/usuarios/nuevo', 'UserController@create')
     ->name('users.create');
 
-Route::get('/usuarios/{id}', 'UserController@show')
-    ->where('id','[0-9]+')
+Route::get('/usuarios/{user}', 'UserController@show')
+    ->where('user', '[0-9]+')
     ->name('users.show');
 
 Route::post('/usuarios', 'UserController@store');
@@ -33,14 +33,15 @@ Route::get('/botines', 'BotinController@index')
     ->name('botines.index');
 
 Route::get('/botines/nuevo', 'BotinController@create')
-    ->name('botines.create');
+    ->name('botines.createb');
 
-Route::get('/botines/{id}', 'BotinController@show')
-    ->name('botines.show');
+Route::get('/botines/{botin}', 'BotinController@show')
+    ->where('botin', '[0-9]+')
+    ->name('botines.showb');
 
 Route::post('/botines', 'BotinController@store');
 
-Route::get('/botines/{botin}/editar', 'BotinController@edit')->name('botines.edit');
+Route::get('/botines/{botin}/editar', 'BotinController@edit')->name('botines.editb');
 
 Route::put('/botines/{botin}', 'BotinController@update');
 
@@ -50,21 +51,22 @@ Route::delete('/botines/{botin}', 'BotinController@destroy')->name('botines.dest
 //Teclados
 
 Route::get('/teclados', 'TecladoController@index')
-    ->name('Teclados.index');
+    ->name('teclados.index');
 
 Route::get('/teclados/nuevo', 'TecladoController@create')
-    ->name('Teclados.create');
+    ->name('teclados.createt');
 
-Route::get('/teclados/{id}', 'TecladoController@show')
-    ->name('Teclados.show');
+Route::get('/teclados/{teclado}', 'TecladoController@show')
+    ->where('teclado', '[0-9]+')
+    ->name('teclados.showt');
 
 Route::post('/teclados', 'TecladoController@store');
 
-Route::get('/teclados/{Teclado}/editar', 'TecladoController@edit')->name('Teclados.edit');
+Route::get('/teclados/{teclado}/editar', 'TecladoController@edit')->name('teclados.editt');
 
-Route::put('/teclados/{Teclado}', 'TecladoController@update');
+Route::put('/teclados/{teclado}', 'TecladoController@update');
 
-Route::delete('/teclados/{Teclado}', 'TecladoController@destroy')->name('Teclados.destroy');
+Route::delete('/teclados/{teclado}', 'TecladoController@destroy')->name('teclados.destroy');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

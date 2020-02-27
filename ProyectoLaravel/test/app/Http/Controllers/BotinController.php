@@ -30,12 +30,12 @@ class BotinController extends Controller
     {
         $botin = Botin::findOrFail($id);
 
-        return view('botines.show',compact('botin'));
+        return view('botines.showb',compact('botin'));
     }
 
     public function create()
     {
-        return view('botines.create');
+        return view('botines.createb');
     }
 
     public function store()
@@ -70,7 +70,7 @@ class BotinController extends Controller
 
     public function edit(Botin $botin)
     {
-        return view('botines.edit', ['botin' => $botin]);
+        return view('botines.editb', ['botin' => $botin]);
     }
 
     public function update(Botin $botin)
@@ -85,7 +85,7 @@ class BotinController extends Controller
 
         $botin->update($data);
 
-        return redirect()->route('botines.show', ['botin' => $botin]);
+        return redirect()->route('botines.showb', ['botin' => $botin]);
     }
 
     function destroy(Botin $botin)

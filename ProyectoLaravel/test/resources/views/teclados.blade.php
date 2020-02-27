@@ -7,11 +7,11 @@
         <h1 class="pb-1">{{ $title }}</h1>
 
         <p>
-            <a href="{{ route('users.create') }}" class="btn btn-primary">Nuevo usuario</a>
+            <a href="{{ route('teclados.createt') }}" class="btn btn-primary">Nuevo teclado</a>
         </p>
     </div>
 
-    @if ($Teclados->isNotEmpty())
+    @if ($teclados->isNotEmpty())
     <table class="table">
         <thead>
             <tr>
@@ -24,20 +24,20 @@
             </tr>
         </thead>
         <tbody>
-        @foreach($Teclados as $Teclado)
+        @foreach($teclados as $teclado)
             <tr>
-            <th scope="row">{{ $Teclado->id }}</th>
-            <td>{{ $Teclado->name }}</td>
-            <td>{{ $Teclado->idioma }}</td>
-            <td>{{ $Teclado->tamano }}</td>
-            <td>{{ $Teclado->tipo }}</td>
-            <td>{{ $Teclado->cherry }}</td>
+            <th scope="row">{{ $teclado->id }}</th>
+            <td>{{ $teclado->name }}</td>
+            <td>{{ $teclado->idioma }}</td>
+            <td>{{ $teclado->tamano }}</td>
+            <td>{{ $teclado->tipo }}</td>
+            <td>{{ $teclado->cherry }}</td>
             <td> 
-                <form action="{{ route('Teclados.destroy', $Teclado) }}" method="POST">
+                <form action="{{ route('teclados.destroy', $teclado) }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <a href="{{ route('Teclados.show', $Teclado) }}" class="btn btn-link"><span class="oi oi-eye"></span></a> 
-                    <a href="{{ route('Teclados.edit', $Teclado) }}" class="btn btn-link"><span class="oi oi-pencil"></span></a>
+                    <a href="{{ route('teclados.showt', $teclado) }}" class="btn btn-link"><span class="oi oi-eye"></span></a> 
+                    <a href="{{ route('teclados.editt', $teclado) }}" class="btn btn-link"><span class="oi oi-pencil"></span></a>
                     <button type="submit" class="btn btn-link"><span class="oi oi-trash"></span></button>
                 </form>
             </td>

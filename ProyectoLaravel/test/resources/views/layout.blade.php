@@ -29,6 +29,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ url('/usuarios') }}">Usuarios</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url('/botines') }}">Botines</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url('/teclados') }}">Teclados</a>
+                </li>
             </ul>
         </div>
     </nav>

@@ -13,7 +13,7 @@ class TecladoController extends Controller
     public function index()
     {
        // $Teclados = DB::table('Teclados')->get();
-        $Teclados = Teclado::all();
+        $teclados = Teclado::all();
 
         
 
@@ -23,19 +23,19 @@ class TecladoController extends Controller
     //       ->with('Teclados', Teclado::all())
      //   ->with('title', 'Listado de Teclados');
 
-        return view('Teclados', compact('title', 'Teclados'));
+        return view('teclados', compact('title', 'teclados'));
     }
 
     public function show($id)
     {
-        $Teclado = Teclado::findOrFail($id);
+        $teclado = Teclado::findOrFail($id);
 
-        return view('Teclados.show',compact('Teclado'));
+        return view('teclados.showt',compact('teclado'));
     }
 
     public function create()
     {
-        return view('Teclados.create');
+        return view('teclados.createt');
     }
 
     public function store()
@@ -65,15 +65,15 @@ class TecladoController extends Controller
 
         ]);
 
-        return redirect()->route('Teclados.index');
+        return redirect()->route('teclados.index');
     }
 
-    public function edit(Teclado $Teclado)
+    public function edit(Teclado $teclado)
     {
-        return view('Teclados.edit', ['Teclado' => $Teclado]);
+        return view('teclados.editt', ['teclado' => $teclado]);
     }
 
-    public function update(Teclado $Teclado)
+    public function update(Teclado $teclado)
     {
         $data = request()->validate([
             'name' => 'required',
@@ -83,15 +83,15 @@ class TecladoController extends Controller
             'cherry' => 'required',
         ]);
 
-        $Teclado->update($data);
+        $teclado->update($data);
 
-        return redirect()->route('Teclados.show', ['Teclado' => $Teclado]);
+        return redirect()->route('teclados.showt', ['teclado' => $teclado]);
     }
 
-    function destroy(Teclado $Teclado)
+    function destroy(Teclado $teclado)
     {
-        $Teclado->delete();
+        $teclado->delete();
         
-        return redirect()->route('Teclados.index');
+        return redirect()->route('teclados.index');
     }
 }
